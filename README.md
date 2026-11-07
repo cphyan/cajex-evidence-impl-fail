@@ -15,4 +15,6 @@ template work, each with the template it proves. Please leave them as they are.
 
 | File | Template | Meant to |
 |---|---|---|
-| *(filled in as templates arrive)* | | |
+| `.github/CODEOWNERS`, with **no** rule requiring code-owner review | `github.code-owners` | fail: owners are named, but nothing requires their review |
+| `.github/dependabot.yml` with `updates: []` | `github.dependency-updates` | fail: the file is there, but updates nothing |
+| `src/server.js`, **deliberately vulnerable** (command injection), with code scanning on | `github.code-scanning-remediation` | fail once its critical alert is older than the deadline (7 days) |
