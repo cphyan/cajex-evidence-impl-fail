@@ -1,5 +1,6 @@
 # Fixture for cajeX's check templates (RFC 20 tracks B and C). Runs only by hand, and never has.
-# DELIBERATELY WRONG: no provenance is attested, actions float on a tag, and the token can write everything.
+# DELIBERATELY WRONG: no provenance is attested, actions float on a tag, the token can write everything,
+# and a job runs on a self-hosted runner.
 name: release
 on: workflow_dispatch
 permissions: write-all
@@ -13,3 +14,7 @@ jobs:
         with:
           name: dist
           path: dist.tgz
+  sign:
+    runs-on: [self-hosted, linux]
+    steps:
+      - run: echo "signs nothing"

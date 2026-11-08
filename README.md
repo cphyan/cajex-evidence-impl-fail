@@ -22,3 +22,5 @@ template work, each with the template it proves. Please leave them as they are.
 | `infra/main.tf`: a security group with SSH (22) open to the internet | `github.iac-no-open-ingress` | fail: a port open to everyone |
 | `.github/workflows/release.yml`: no attestation, actions on a tag, `permissions: write-all` (runs only by hand) | `github.build-provenance` | fail: nothing attests the build |
 | Release `v1.0.0` with `dist.tgz` alone | `github.release-attestations` | fail: no signature or attestation |
+| No required status check, no workflow on pull requests | `github.tests-before-merge` | fail: nothing waits for tests |
+| A job on a self-hosted runner (`release.yml`, `sign`) | `github.hosted-runners` | fail: a build may not start clean |
