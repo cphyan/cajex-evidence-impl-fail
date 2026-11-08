@@ -24,3 +24,4 @@ template work, each with the template it proves. Please leave them as they are.
 | Release `v1.0.0` with `dist.tgz` alone | `github.release-attestations` | fail: no signature or attestation |
 | No required status check, no workflow on pull requests | `github.tests-before-merge` | fail: nothing waits for tests |
 | A job on a self-hosted runner (`release.yml`, `sign`) | `github.hosted-runners` | fail: a build may not start clean |
+| No SBOM made by any workflow, none attached to `v1.0.0` | `github.sbom-generated`, `github.release-sbom` | fail: no bill of materials |
