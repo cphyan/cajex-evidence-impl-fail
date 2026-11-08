@@ -25,3 +25,5 @@ template work, each with the template it proves. Please leave them as they are.
 | No required status check, no workflow on pull requests | `github.tests-before-merge` | fail: nothing waits for tests |
 | A job on a self-hosted runner (`release.yml`, `sign`) | `github.hosted-runners` | fail: a build may not start clean |
 | No SBOM made by any workflow, none attached to `v1.0.0` | `github.sbom-generated`, `github.release-sbom` | fail: no bill of materials |
+| `infra/main.tf`: a plain HTTP listener; a one-region trail without validation; object lock in GOVERNANCE mode; a lifecycle that only archives | the same four IaC templates | fail |
+| No workflow checks the infrastructure code against policy | `github.iac-policy-gate` | fail |
