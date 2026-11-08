@@ -1,0 +1,15 @@
+# Fixture for cajeX's check templates (RFC 20 tracks B and C). Runs only by hand, and never has.
+# DELIBERATELY WRONG: no provenance is attested, actions float on a tag, and the token can write everything.
+name: release
+on: workflow_dispatch
+permissions: write-all
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: tar czf dist.tgz src
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist.tgz
