@@ -18,3 +18,5 @@ template work, each with the template it proves. Please leave them as they are.
 | `.github/CODEOWNERS`, with **no** rule requiring code-owner review | `github.code-owners` | fail: owners are named, but nothing requires their review |
 | `.github/dependabot.yml` with `updates: []` | `github.dependency-updates` | fail: the file is there, but updates nothing |
 | `src/server.js`, **deliberately vulnerable** (command injection), with code scanning on | `github.code-scanning-remediation` | fail once its critical alert is older than the deadline (7 days) |
+| `infra/main.tf`: a database **not** declared encrypted | `github.iac-storage-encrypted` | fail: storage declared unencrypted |
+| `infra/main.tf`: a security group with SSH (22) open to the internet | `github.iac-no-open-ingress` | fail: a port open to everyone |
